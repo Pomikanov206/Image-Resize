@@ -13,8 +13,10 @@ public class ImgCreate {
 
     public ImgCreate(String path){
         //Поиск конца строки и Изменение имени изображения
-        int index = path.lastIndexOf(".jpg");
-        this.path = path.substring(0,index) + "new.jpg";
+//        int index = path.lastIndexOf(".jpg");
+        int index = path.lastIndexOf("\\");
+        String newPathScaled = path.substring(0,index+1) + "scaled\\";
+        this.path = newPathScaled + path.substring(index,path.length());
     }
 
     public ImgCreate(String[] path){
